@@ -28,7 +28,12 @@
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "baseUrl": ".",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@/*": [
+        "app/*"
+      ]
+    }
   },
   "exclude": [
     "node_modules"
