@@ -17,52 +17,59 @@ export class GildedRose {
     this.items = items;
   }
 
-  updateQuality() {
-    for (let i = 0; i < this.items.length; i++) {
-      if (this.items[i].name.includes('Sulfuras') && this.items[i].quality !== 80) {
-        this.items[i].quality === 80;
-      }
-      if (!this.items[i].name.includes('Aged Brie') && !this.items[i].name.includes('Backstage passes') && this.items[i].quality > -1 && !this.items[i].name.includes('Sulfuras')) {
-        this.items[i].quality = this.items[i].quality > 1 ? this.items[i].quality - 1 : 0;
-      } else {
-        if (this.items[i].quality < 50) {
-          this.items[i].quality = this.items[i].quality === 50 ? 50 : this.items[i].quality + 1
-          if (this.items[i].name.includes('Backstage passes')) {
-            if (this.items[i].sellIn < 11) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality === 50 ? 50 : this.items[i].quality + 1
-              }
-            }
-            if (this.items[i].sellIn < 6) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality === 50 ? 50 : this.items[i].quality + 1
-              }
+  runQuality(a: Item) {
+    if (a.name.includes('Sulfuras') && a.quality !== 80) {
+      a.quality === 80; // All Sulfuras;
+    }
+    if (!a.name.includes('Aged Brie') && !a.name.includes('Backstage passes') && a.quality > -1 && !a.name.includes('Sulfuras')) {
+      a.quality = a.quality > 1 ? a.quality - 1 : 0;
+    } else {
+      if (a.quality < 50) {
+        a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
+        if (a.name.includes('Backstage passes')) {
+          if (a.sellIn < 11) {
+            if (a.quality < 50) {
+              a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
             }
           }
-        }
-      }
-
-      if (!this.items[i].name.includes('Sulfuras')) {
-        this.items[i].sellIn = this.items[i].sellIn - 1;
-      }
-
-      if (this.items[i].sellIn < 0) {
-        if (!this.items[i].name.includes('Aged Brie')) {
-          if (!this.items[i].name.includes('Backstage passes')) {
-            if (this.items[i].quality > 0 && !this.items[i].name.includes('Sulfuras')) {
-              this.items[i].quality = this.items[i].quality > 1 ? this.items[i].quality - 1 : 0;
+          if (a.sellIn < 6) {
+            if (a.quality < 50) {
+              a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
             }
-          } else {
-            this.items[i].quality = 0;
-          }
-        } else {
-          if (this.items[i].quality < 50) {
-            this.items[i].quality = this.items[i].quality === 50 ? 50 : this.items[i].quality + 1;
           }
         }
       }
     }
+    return a;
+  }
 
+  runSellin(a: Item) {
+    if (!a.name.includes('Sulfuras')) {
+      a.sellIn = a.sellIn - 1; // Updating sellIn value; 
+    }
+    if (a.sellIn < 0) {
+      if (!a.name.includes('Aged Brie')) {
+        if (!a.name.includes('Backstage passes')) {
+          if (a.quality > 0 && !a.name.includes('Sulfuras')) {
+            a.quality = a.quality > 1 ? a.quality - 1 : 0; // Guarding for quality of 0;
+          }
+        } else {
+          a.quality = 0;
+        }
+      } else {
+        if (a.quality < 50) {
+          a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
+        }
+      }
+    }
+    return a;
+  }
+
+  updateQuality() {
+    for (let i = 0; i < this.items.length; i++) {
+      this.items[i] = this.runQuality(this.items[i]);
+      this.items[i] = this.runSellin(this.items[i]);
+    }
     return this.items;
   }
 }
