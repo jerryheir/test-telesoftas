@@ -23,15 +23,11 @@ export class GildedRose {
       a.quality = a.quality > 1 ? a.quality - 1 : 0;
     } else {
       if (a.quality < 50) {
-        a.quality = a.quality + 1; // Guarding for quality of 50;
+        a.quality = a.quality + 1;
         if (a.name.includes('Backstage passes')) {
-          if (a.sellIn < 11) {
-            if (a.quality < 50) {
-              if (a.quality < 50) a.quality = a.quality + 1; // Guarding for quality of 50;
-            }
-          }
+          if (a.sellIn < 11 && a.quality < 50) a.quality = a.quality + 1;
           if (a.sellIn < 6) {
-            if (a.quality < 50) a.quality = a.quality + 1; // Guarding for quality of 50;
+            if (a.quality < 50) a.quality = a.quality + 1;
           }
         }
       }
