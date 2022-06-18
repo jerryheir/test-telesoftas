@@ -1,5 +1,4 @@
 import { Item, GildedRose } from '../../app/gilded-rose';
-import TeleSoftas from '../../app/telesoftas';
 
 describe('Gilded Rose', () => {
   it('Sulfuras Test', () => {
