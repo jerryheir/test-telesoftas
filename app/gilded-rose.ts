@@ -18,24 +18,20 @@ export class GildedRose {
   }
 
   runQuality(a: Item) {
-    if (a.name.includes('Sulfuras') && a.quality !== 80) {
-      a.quality === 80; // All Sulfuras;
-    }
+    if (a.name.includes('Sulfuras') && a.quality !== 80) a.quality === 80; // Sulfuras;
     if (!a.name.includes('Aged Brie') && !a.name.includes('Backstage passes') && a.quality > -1 && !a.name.includes('Sulfuras')) {
       a.quality = a.quality > 1 ? a.quality - 1 : 0;
     } else {
       if (a.quality < 50) {
-        a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
+        a.quality = a.quality + 1; // Guarding for quality of 50;
         if (a.name.includes('Backstage passes')) {
           if (a.sellIn < 11) {
             if (a.quality < 50) {
-              a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
+              if (a.quality < 50) a.quality = a.quality + 1; // Guarding for quality of 50;
             }
           }
           if (a.sellIn < 6) {
-            if (a.quality < 50) {
-              a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
-            }
+            if (a.quality < 50) a.quality = a.quality + 1; // Guarding for quality of 50;
           }
         }
       }
@@ -44,21 +40,15 @@ export class GildedRose {
   }
 
   runSellin(a: Item) {
-    if (!a.name.includes('Sulfuras')) {
-      a.sellIn = a.sellIn - 1; // Updating sellIn value; 
-    }
+    if (!a.name.includes('Sulfuras')) a.sellIn = a.sellIn - 1;
     if (a.sellIn < 0) {
+      if (a.name.includes('Aged Brie') && a.quality < 50) a.quality = a.quality + 1;
       if (!a.name.includes('Aged Brie')) {
+        if (a.name.includes('Backstage passes')) a.quality = 0;
         if (!a.name.includes('Backstage passes')) {
           if (a.quality > 0 && !a.name.includes('Sulfuras')) {
             a.quality = a.quality > 1 ? a.quality - 1 : 0; // Guarding for quality of 0;
           }
-        } else {
-          a.quality = 0;
-        }
-      } else {
-        if (a.quality < 50) {
-          a.quality = a.quality === 50 ? 50 : a.quality + 1; // Guarding for quality of 50;
         }
       }
     }
