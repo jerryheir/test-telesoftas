@@ -32,14 +32,13 @@ class TeleSoftas {
             }));
 
             if (array && this.count > 0) {
+                // When you still have positives
                 this.positive_instance = this.count;
-                console.log("POSITIVES", this.positive_instance);
                 this.count = 0;
                 this.execute();
             } else {
                 // If there are no more positive responses, then update items
                 this.instance_amount = this.instance_amount - 1;
-                console.log("NO_POSITIVES", this.instance_amount);
                 this.shop_items = [...this.shop_items, new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
                 this.count = 0;
                 this.execute();
