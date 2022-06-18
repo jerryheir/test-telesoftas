@@ -2,13 +2,19 @@
   "name": "gilded-rose-kata",
   "version": "1.0.0",
   "description": "Gilded Rose kata in TypeScript",
+  "author": {
+    "name": "Jerry Nwaeze",
+    "email": "nwaezejerry@gmail.com"
+  },
+  "main": "app/index.ts",
   "scripts": {
     "precompile": "rimraf app/**/*.js test/**/*.js",
     "compile": "tsc",
     "pretest": "rimraf app/**/*.js test/**/*.js",
     "test:jest": "jest",
     "test:jest:watch": "jest --watchAll",
-    "test:mocha": "nyc mocha"
+    "test:mocha": "nyc mocha",
+    "start": "node ."
   },
   "license": "MIT",
   "private": true,
