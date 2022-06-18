@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { Item, GildedRose } from '../../app/gilded-rose';
+import TeleSoftas from '../../app/telesoftas';
 
 describe('Gilded Rose', () => {
   it('Once the sell by date has passed, Quality degrades twice as fast', () => {
@@ -47,5 +48,15 @@ describe('Gilded Rose', () => {
     expect(items[1].quality).to.equal(12);
     expect(items[2].sellIn).to.equal(4);
     expect(items[2].quality).to.equal(11);
+  });
+});
+
+describe('Telesoftas Functionality Test', () => {
+  it('Functionality', () => {
+    const telesoftas = new TeleSoftas(1, 1);
+    telesoftas.execute().then((result) => {
+      expect(result.status).to.equal("success");
+      expect(result.shop_items.length).to.equal(1);
+    });
   });
 });

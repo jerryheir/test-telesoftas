@@ -1,7 +1,5 @@
 import * as fs from 'fs';
 import axios from 'axios';
-import gradient from 'gradient-string';
-import figlet from 'figlet';
 import { Item } from './gilded-rose';
 
 class TeleSoftas {
@@ -17,7 +15,7 @@ class TeleSoftas {
         this.shop_items = [];
     }
 
-    async execute (): Promise<any> {
+    async execute (): Promise<{ status: string; shop_items: Array<Item> }> {
         if (this.instance_amount > 0) {
             const array_of_positive_instance = [...Array(this.positive_instance).keys()];
             const array = await Promise.all(array_of_positive_instance.map(async () => {
@@ -35,21 +33,16 @@ class TeleSoftas {
                 // When you still have positives
                 this.positive_instance = this.count;
                 this.count = 0;
-                this.execute();
+                await this.execute();
             } else {
                 // If there are no more positive responses, then update items
                 this.instance_amount = this.instance_amount - 1;
                 this.shop_items = [...this.shop_items, new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
                 this.count = 0;
-                this.execute();
+                await this.execute();
             }
-        } else {
-            figlet('Completed', (_err, data) => {
-                console.log('\n\n');
-                console.log(gradient.pastel.multiline(data));
-            });
-            return { success: "success", shop_items: this.shop_items };
         }
+        return { status: "success", shop_items: this.shop_items };
     }
 }
 
