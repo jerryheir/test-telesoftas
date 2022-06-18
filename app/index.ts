@@ -65,12 +65,13 @@ const run = async () => {
     });
 }
 
-intro().then(async () => {
+const runProcess = async () => {
+    await intro();
     await askQuestionOne();
     await handleAnswer(instance_amount);
     await askQuestionTwo();
     await handleAnswer(positive_instance);
     await run();
-});
+}
 
-// new Array(45); // simplier way to create new arrays of certain length to iterate on
+runProcess();
