@@ -1,1 +1,1 @@
-//[...Array(10).keys()];
+// new Array(45); // simplier way to create new arrays of certain length to iterate on
