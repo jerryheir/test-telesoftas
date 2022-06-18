@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Item, GildedRose } from '@/gilded-rose';
+import { Item, GildedRose } from '../../app/gilded-rose';
 
 describe('Gilded Rose', () => {
   it('Once the sell by date has passed, Quality degrades twice as fast', () => {

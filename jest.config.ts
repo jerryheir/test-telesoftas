@@ -1,4 +1,4 @@
-import { pathsToModuleNameMapper } from  "ts-jest/utils";
+import { pathsToModuleNameMapper } from  "ts-jest";
 const { compilerOptions } = require("./tsconfig");
 
 export default {
@@ -9,5 +9,12 @@ export default {
   transform: {
     '^.+\\.tsx?$': 'ts-jest',
   },
+  moduleFileExtensions: ['ts', 'tsx', 'js'],
   moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' } ),
+  preset: 'ts-jest/presets/default-esm', // or other ESM presets
+  globals: {
+    'ts-jest': {
+      useESM: true,
+    },
+  },
 };

@@ -1,4 +1,4 @@
-import { Item, GildedRose } from '@/gilded-rose';
+import { Item, GildedRose } from '../../app/gilded-rose';
 
 describe('Gilded Rose', () => {
   it('Sulfuras Test', () => {

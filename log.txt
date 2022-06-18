@@ -1,0 +1,6 @@
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/5-64c2804cc48057b94fd0b3eaf323d92c.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/12-e4f57c8f172c51fdd983c2837349f853.gif"}
+

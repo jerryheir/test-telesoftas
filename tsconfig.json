@@ -41,6 +41,9 @@
   "include": ["app"],
   "ts-node": {
     "esm": true,
-    "experimentalSpecifierResolution": true
+    "experimentalSpecifierResolution": true,
+    "moduleTypes": {
+      "jest.config.ts": "cjs"
+    }
   }
 }
