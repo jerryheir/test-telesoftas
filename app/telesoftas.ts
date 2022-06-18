@@ -1,5 +1,7 @@
 import * as fs from 'fs';
 import axios from 'axios';
+import gradient from 'gradient-string';
+import figlet from 'figlet';
 import { Item } from './gilded-rose';
 
 class TeleSoftas {
@@ -43,6 +45,10 @@ class TeleSoftas {
                 this.execute();
             }
         } else {
+            figlet('Completed', (_err, data) => {
+                console.log('\n\n');
+                console.log(gradient.pastel.multiline(data));
+            });
             return { success: "success", shop_items: this.shop_items };
         }
     }

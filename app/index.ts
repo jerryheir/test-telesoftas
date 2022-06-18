@@ -1,8 +1,8 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import gradient from 'gradient-string';
+// import gradient from 'gradient-string';
 import chalkAnimation from 'chalk-animation';
-import figlet from 'figlet';
+// import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
 import TeleSoftas from './telesoftas';
 
@@ -60,14 +60,8 @@ const handleAnswer = async (digit: any) => {
 
 const run = async () => {
     const telesoftas = new TeleSoftas(instance_amount, positive_instance);
-    const res = await telesoftas.execute();
+    await telesoftas.execute();
     await sleep();
-    if (res) {
-        figlet('Completed', (_err, data) => {
-            console.log('\n\n');
-            console.log(gradient.pastel.multiline(data));
-        });
-    }
 }
 
 const runProcess = async () => {

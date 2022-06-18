@@ -70,3 +70,31 @@
 
 {"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/4-c53643ecec77153eefb461e053fb4947.gif"}
 
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/14-b57c6dc03aa15a4b18f53eb50d6197ee.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/1-af11222d8d4af90bdab8fc447c8cfebf.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/9-6403270cf95723ae4664274db51f1fd4.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/15-3d723ea13af91839a671d4791fc53dcc.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/10-271c872c91cd72c1e38e72d2f8eda676.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/15-3d723ea13af91839a671d4791fc53dcc.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/1-af11222d8d4af90bdab8fc447c8cfebf.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/12-e4f57c8f172c51fdd983c2837349f853.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/6-304e564038051dab8a5aa43156cdc20d.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/15-3d723ea13af91839a671d4791fc53dcc.gif"}
+
+{"answer":"yes","forced":false,"image":"https://yesno.wtf/assets/yes/3-422e51268d64d78241720a7de52fe121.gif"}
+
