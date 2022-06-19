@@ -1,4 +1,4 @@
-# Gilded Rose
+# Gilded Rose (Jerry Nwaeze)
 
 This is a refactored version of the Gilded Rose Kata in Typescript
 
