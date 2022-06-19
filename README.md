@@ -34,8 +34,9 @@ Then I tried ensure they are called in parallel by using
 await Promise.all()
 ```
 which takes an array of promises and returns a resolved array.
-I also used simple recursion to ensure proper execution of the business logic where
-I tracked the number of positive responses and triggered the function still there were no more positive responses.
+For the positive responses, I wrote to log.txt file using the Node fs module.
+I kept count of all positive responses which I used as the foundation for creating a simple recursion to 
+execute the business logic where I triggered the function till there were no more positive responses.
 After this I reduce the instance amount by 1 and updated the shop items and then repeated the process again till it is completed.
 
 When process is completed, I logged that to the user for better user experience . And then I end the process.
