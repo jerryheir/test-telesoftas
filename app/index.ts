@@ -9,13 +9,14 @@ import TeleSoftas from './telesoftas';
 let instance_amount = 1;
 let positive_instance = 1;
 
+// Just a function to simulate a 2000 delay to give console application a unique feel and ux
 const sleep = (ms = 2000) => new Promise((r) => setTimeout(r, ms));
 
 const intro = async () => {
     const rainbowTitle = chalkAnimation.rainbow(
       'JEREMIAH NWAEZE - Senior Software Engineer \n'
     );
-
+    // An intro script which also gives an instruction...
     await sleep();
     rainbowTitle.stop();
     console.log(`I am a process on your computer.\nAnd I will be asking you two questions...\n\n${chalk.bgBlue('FIRST QUESTION')}`);
@@ -49,7 +50,7 @@ const askQuestionTwo = async () => {
 const handleAnswer = async (digit: any) => {
     const spinner = createSpinner('Checking input...').start();
     await sleep();
-    // Validating and Guarding...
+    // Validating and Guarding Input...
     if (Number(digit)) {
         spinner.success({ text: 'Input has been accepted as an argument. 🎉🎉🎉' });
     } else {
@@ -60,7 +61,8 @@ const handleAnswer = async (digit: any) => {
 
 const run = async () => {
     const telesoftas = new TeleSoftas(instance_amount, positive_instance);
-    const res = await telesoftas.execute();
+    const res = await telesoftas.execute(); // This functions takes as long as your input decides. 
+    // In a true backend application, a response should be given and the function should run in the background till it resolves.
     await sleep();
     if (res && res.status === "success") {
         figlet('Completed', (_err, data) => {

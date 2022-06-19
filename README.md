@@ -19,27 +19,26 @@ Understanding the approach behind the implementation
 ### FIRST TASK
 My mindset going into this was to write very detailed test cases to match the requirements.
 Then also implementing guards to ensure edge cases are sorted.
-Abstracting some of the existing logic.
-Also used includes to avoid matching specifics.
-And also testing for regression and accuracy.
+Abstracting some of the existing logic and also using includes to avoid matching specifics.
+I tested for regression and correctness.
 The test cases all passed, and the performance of the code was even notably better.
 
 ### SECOND TASK
-First I tried to ensure I would be able to collect user's input from the console. 
-After getting users input. I initialize the telesoftas class and call the execute function.
-I created an instance of an array with the length of the users second input.
+For this I tried to ensure I would be able to collect user's input from the console by asking two questions. 
+And after getting users input, I initialize the telesoftas class, and called the `execute` function.
+I created an instance of an array with the length of the user's second input (`positive_instance`).
 I also used axios to make http requests with the intention of looping through each one of them.
-Then I tried ensure they are called in parallel by using 
+Then I tried ensure they were run in parallel by using 
 ```javascript
 await Promise.all()
 ```
 which takes an array of promises and returns a resolved array.
-For the positive responses, I wrote to log.txt file using the Node fs module.
+For the positive responses, I wrote into the log.txt file using the Node fs module.
 I kept count of all positive responses which I used as the foundation for creating a simple recursion to 
-execute the business logic where I triggered the function till there were no more positive responses.
-After this I reduce the instance amount by 1 and updated the shop items and then repeated the process again till it is completed.
+execute the business logic again, where I triggered the function till there were no more positive responses.
+After this I reduced the `instance_amount` by 1 and updated the dummy shop items. I repeated this process again till `instance_amount` was 0 (Zero) and the process was completed.
 
-When process is completed, I logged that to the user for better user experience . And then I end the process.
+When the process was completed, I logged the below prompt to the user for better user experience . And then I end the process.
 ```
    ____                      _      _           _ 
   / ___|___  _ __ ___  _ __ | | ___| |_ ___  __| |
