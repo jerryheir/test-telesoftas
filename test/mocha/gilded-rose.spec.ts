@@ -53,10 +53,10 @@ describe('Gilded Rose', () => {
 
 describe('Telesoftas Functionality Test', () => {
   it('Functionality', () => {
-    const telesoftas = new TeleSoftas(1, 1);
+    const telesoftas = new TeleSoftas(2, 3);
     telesoftas.execute().then((result) => {
       expect(result.status).to.equal("success");
-      expect(result.shop_items.length).to.equal(1);
+      expect(result.shop_items.length).to.equal(2);
     });
   });
 });

@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import axios from 'axios';
-import { Item } from './gilded-rose';
+import { Item } from './gilded-rose.js';
 
 class TeleSoftas {
     instance_amount: number;
@@ -35,17 +35,19 @@ class TeleSoftas {
                 // When you still have positives
                 this.positive_instance = this.count;
                 // Resetting count and Using simple recursion to recall the function
-                this.count = 0;
-                await this.execute();
+                // this.count = 0;
+                // await this.execute();
             } else {
                 // If there are no more positive responses, then update items
                 this.instance_amount = this.instance_amount - 1;
                 // Simulating adding of dummy items into an existing items list
                 this.shop_items = [...this.shop_items, new Item("Sulfuras, Hand of Ragnaros", 0, 80)];
-                this.count = 0;
+                // this.count = 0;
                 // Resetting count and Using simple recursion to recall the function
-                await this.execute();
+                // await this.execute();
             }
+            this.count = 0;
+            await this.execute();
         }
         return { status: "success", shop_items: this.shop_items };
     }

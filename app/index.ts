@@ -4,7 +4,7 @@ import gradient from 'gradient-string';
 import chalkAnimation from 'chalk-animation';
 import figlet from 'figlet';
 import { createSpinner } from 'nanospinner';
-import TeleSoftas from './telesoftas';
+import TeleSoftas from './telesoftas.js';
 
 let instance_amount = 1;
 let positive_instance = 1;
