@@ -47,7 +47,7 @@ const askQuestionTwo = async () => {
     positive_instance = parseInt(answers.positive_instance);
 }
 
-const handleAnswer = async (digit: any) => {
+const handleAnswer = async (digit: number) => {
     const spinner = createSpinner('Checking input...').start();
     await sleep();
     // Validating and Guarding Input...
